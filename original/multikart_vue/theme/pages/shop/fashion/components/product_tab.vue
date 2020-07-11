@@ -58,8 +58,8 @@ export default {
   },
   data() {
     return {
-      title: 'special products',
-      subtitle: 'exclusive products',
+      title: 'Jobs Near you',
+      subtitle: 'Exclusive for you!',
       showCart: false,
       showquickviewmodel: false,
       showcomapreModal: false,

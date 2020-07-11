@@ -62,7 +62,7 @@ export default {
   },
   data() {
     return {
-      title: 'top collection',
+      title: 'Trending Jobs',
       subtitle: 'special offer',
       showCart: false,
       showquickviewmodel: false,

@@ -1,15 +1,15 @@
 <template>
   <div>
     <Header />
-    <Slider />
+    <!--<Slider /> -->
     <CollectionBanner />
     <ProductSlider :products="products" @openQuickview="showQuickview" @openCompare="showCoampre" @openCart="showCart" />
-    <Banner />
+    <!--<Banner />-->
     <ProductTab :products="products" :category="category" @openQuickview="showQuickview" @openCompare="showCoampre" @openCart="showCart" />
-    <Services />
-    <Blog />
-    <Instagram />
-    <LogoSlider />
+   <!-- <Services /> -->
+   <!-- <Blog /> -->
+    <!-- <Instagram /> -->
+   <!-- <LogoSlider /> -->
     <Footer />
     <quickviewModel :openModal="showquickviewmodel" :productData="quickviewproduct" />
     <compareModel :openCompare="showcomparemodal" :productData="comapreproduct" @closeCompare="closeCompareModal" />
@@ -76,7 +76,7 @@ export default {
   methods: {
     productsArray: function () {
       this.productslist.map((item) => {
-        if (item.type === 'fashion') {
+        if (item.type === 'edpround2') {
           this.products.push(item)
           item.collection.map((i) => {
             const index = this.category.indexOf(i)

@@ -5,7 +5,7 @@
         <div class="row partition2">
           <div class="col-md-6" v-for="(item, index) in items" :key="index">
             <nuxt-link :to="{ path: '/collection/leftsidebar/all'}">
-              <div class="collection-banner p-right text-center">
+              <div class="collection-banner p-center text-center">
                 <div class="img-part">
                   <img :src="item.imagepath" class="img-fluid" alt />
                 </div>
@@ -29,14 +29,14 @@ export default {
     return {
       items: [
         {
-          imagepath: require('@/assets/images/sub-banner1.jpg'),
-          title: 'men',
-          subtitle: 'save 30%'
+          imagepath: require('@/assets/images/real/find_a_job_4_resized.jpg'),
+          title: 'Find a Job',
+          subtitle: 'Your time Your rules'
         },
         {
-          imagepath: require('@/assets/images/sub-banner2.jpg'),
-          title: 'women',
-          subtitle: 'save 60%'
+          imagepath: require('@/assets/images/real/post_a_job_resized.jpg'),
+          title: 'Post a Job',
+          subtitle: 'Premium service at an affordable price'
         }
       ]
     }
