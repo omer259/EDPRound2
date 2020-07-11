@@ -113,7 +113,7 @@ export default {
   },
   methods: {
     getImgUrl(path) {
-      return require('@/assets/images/' + path)
+      return require('@/assets/images/real/products/' + path)
     },
     addToCart: function (product) {
       this.cartval = true
