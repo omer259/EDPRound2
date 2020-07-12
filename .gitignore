@@ -3,3 +3,6 @@
 
 # ignore files resulted as a result of npm install package json
 original/multikart_vue/theme/node_modules/
+
+# all files generated after npm run dev
+original/multikart_vue/theme/.nuxt/
