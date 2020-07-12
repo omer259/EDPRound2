@@ -1,0 +1,5 @@
+# common MacOS file not needed
+.DS_Store
+
+# ignore files resulted as a result of npm install package json
+original/multikart_vue/theme/node_modules/
