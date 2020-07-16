@@ -39,39 +39,7 @@
                                     <i class="fa fa-list-ul list-layout-view"></i>
                                   </li>
                                 </ul>
-                              </div>
-                              <div class="collection-grid-view">
-                                <ul>
-                                  <li>
-                                    <img
-                                      :src='"@/assets/images/icon/2.png"'
-                                      @click="grid2()"
-                                      class="product-2-layout-view"
-                                    />
-                                  </li>
-                                  <li>
-                                    <img
-                                      :src='"@/assets/images/icon/3.png"'
-                                      @click="grid3()"
-                                      class="product-3-layout-view"
-                                    />
-                                  </li>
-                                  <li>
-                                    <img
-                                      :src='"@/assets/images/icon/4.png"'
-                                      @click="grid4()"
-                                      class="product-4-layout-view"
-                                    />
-                                  </li>
-                                  <li>
-                                    <img
-                                      :src='"@/assets/images/icon/6.png"'
-                                      @click="grid6()"
-                                      class="product-6-layout-view"
-                                    />
-                                  </li>
-                                </ul>
-                              </div>
+                              </div>                            
                               <div class="product-page-filter">
                                 <select @change="onChangeSort($event)">
                                   <option value="all">Sorting Items</option>
@@ -98,7 +66,7 @@
                           </div>
                           <div
                           class="col-grid-box"
-                          :class="{'col-lg-3':col4 == true, 'col-lg-4':col3 == true, 'col-lg-6':col2 == true, 'col-lg-2':col6 == true, 'col-lg-12':listview == true}"
+                          :class="{'col-lg-3':col4 == true, 'col-lg-12':listview == true}"
                           v-for="(product,index) in filterProduct"
                           :key="index"
                           v-show="setPaginate(index)"
@@ -202,11 +170,8 @@ export default {
   data() {
     return {
       bannerimagepath: require('@/assets/images/side-banner.png'),
-      col2: false,
-      col3: false,
-      col4: true,
-      col6: false,
-      listview: false,
+      col4: false,
+      listview: true,
       priceArray: [],
       allfilters: [],
       items: [],
@@ -248,45 +213,11 @@ export default {
     },
     gridView() {
       this.col4 = true
-      this.col2 = false
-      this.col3 = false
-      this.col6 = false
       this.listview = false
     },
     listView() {
       this.listview = true
       this.col4 = false
-      this.col2 = false
-      this.col3 = false
-      this.col6 = false
-    },
-    grid2() {
-      this.col2 = true
-      this.col3 = false
-      this.col4 = false
-      this.col6 = false
-      this.listview = false
-    },
-    grid3() {
-      this.col3 = true
-      this.col2 = false
-      this.col4 = false
-      this.col6 = false
-      this.listview = false
-    },
-    grid4() {
-      this.col4 = true
-      this.col2 = false
-      this.col3 = false
-      this.col6 = false
-      this.listview = false
-    },
-    grid6() {
-      this.col6 = true
-      this.col2 = false
-      this.col3 = false
-      this.col4 = false
-      this.listview = false
     },
     removeTags(val) {
       this.allfilters.splice(this.allfilters.indexOf(val), 1)
