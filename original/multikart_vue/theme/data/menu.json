@@ -3,26 +3,26 @@
           {
             "title": "Home", "type": "sub", "badgeValue": "new", "active": false,
              "children": [
-              { "title": "clothing", "type": "sub", "active": false, 
+              { "title": "Cleaning", "type": "sub", "active": false, 
                 "children": [
-                  { "path": "/shop/fashion", "title": "Fashion 1", "type": "link" },
-                  { "path": "/shop/fashion-2", "title": "Fashion 2", "type": "link" },
-                  { "path": "/shop/fashion-3", "title": "Fashion 3", "type": "link" },
-                  { "path": "/shop/kids", "title": "kids", "type": "link" }
+                  { "path": "/shop/fashion", "title": "Cleaning 1", "type": "link" },
+                  { "path": "/shop/fashion", "title": "Cleaning 2", "type": "link" },
+                  { "path": "/shop/fashion", "title": "Cleaning 3", "type": "link" },
+                  { "path": "/shop/fashion", "title": "Cleaning 4", "type": "link" }
                 ]
               },          
-              { "path": "/shop/watch", "title": "Watch", "type": "link" },
-              { "path": "/shop/shoes", "title": "Shoes", "type": "link" },         
-              { "path": "/shop/bags", "title": "Bags", "type": "link" },
-              { "path": "/shop/pets", "title": "pets", "type": "link" },      
-              { "path": "/shop/furniture", "title": "Furniture", "type": "link" },
-              { "path": "/shop/flower", "title": "Flower", "type": "link" },
-              { "path": "/shop/electronics-1", "title": "Electronics", "type": "link" },
-              { "path": "/shop/vegetables", "title": "Vegetables", "type": "link" },
-              { "path": "/shop/beauty", "title": "Beauty", "type": "link" },
-              { "path": "/shop/tools", "title": "Tools", "type": "link" },
-              { "path": "/shop/jewellery", "title": "Jewellery", "type": "link" },
-              { "path": "/shop/gym", "title": "gym", "type": "link" }
+              { "path": "/collection/leftsidebar/all", "title": "Cleaning", "type": "link" },
+              { "path": "/collection/leftsidebar/all", "title": "Handyman", "type": "link" },         
+              { "path": "/collection/leftsidebar/all", "title": "Photographer", "type": "link" },
+              { "path": "/collection/leftsidebar/all", "title": "Decorator", "type": "link" },      
+              { "path": "/collection/leftsidebar/all", "title": "Pet Walker", "type": "link" },
+              { "path": "/collection/leftsidebar/all", "title": "Gardener", "type": "link" },
+              { "path": "/collection/leftsidebar/all", "title": "Electrician", "type": "link" },
+              { "path": "/collection/leftsidebar/all", "title": "Builder", "type": "link" },
+              { "path": "/collection/leftsidebar/all", "title": "Beautician", "type": "link" },
+              { "path": "/collection/leftsidebar/all", "title": "Tutor", "type": "link" },
+              { "path": "/collection/leftsidebar/all", "title": "Instructors", "type": "link" },
+              { "path": "/collection/leftsidebar/all", "title": "Shopper", "type": "link" }
             ]
           },
     
