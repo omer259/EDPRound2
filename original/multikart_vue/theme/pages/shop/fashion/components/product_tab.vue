@@ -58,7 +58,7 @@ export default {
   },
   data() {
     return {
-      title: 'Jobs Near you',
+      title: 'Near you',
       subtitle: 'Exclusive for you!',
       showCart: false,
       showquickviewmodel: false,
