@@ -50,7 +50,7 @@
   </div>
 </template>
 <script type="text/javascript">
-import productBox1 from '../../../../components/product-box/product-box1'
+import productBox1 from '../../../../components/product-box/product-box3'
 export default {
   props: ['products', 'category'],
   components: {
