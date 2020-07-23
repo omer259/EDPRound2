@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       swiperOption: {
-        slidesPerView: 6,
+        slidesPerView: 4,
         freeMode: true,
         breakpoints: {
           1199: {

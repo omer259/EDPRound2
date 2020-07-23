@@ -3,94 +3,112 @@
     <Header />
     <Breadcrumbs title="New Listing" />
     <div class="title1 section-t-space">
-      <h4>{{subtitle}}</h4>
       <h2 class="title-inner1">{{title}}</h2>
+      <h4>{{subtitle}}</h4>
     </div>
     <section class="section-b-space p-t-0 ratio_asos">
       <div class="container">
         <div class="row">
-          <div class="col">
-            <div class="theme-tab">
-              <b-tabs content-class="mt-3">
-                <b-tab
-                  :title="collection"
-                  v-for="(collection,index) in category"
-                  :key="index"
-                >
-                  <div class="no-slider row">
-                    <div
-                      class="product-box"
-                      v-for="(product,index) in getCategoryProduct(collection)"
-                      :key="index"
-                    >
-                    <productBox1
-                                @opencartmodel="showCart"
-                                @showCompareModal="showCoampre"
-                                @openquickview="showQuickview"
-                                @showalert="alert"
-                                @alertseconds="alert"
-                                :product="product"
-                                :index="index"
-                              />
+          <div class="col-md-12">
+            <br>
+            <div class="slide-6 no-arrow">
+              <div v-swiper:mySwiper="swiperOption">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide" v-for="(item, index) in items" :key="index">
+                    <div>
+                      <div class="logo-block text-center">
+                        <a href="/page/create/create-details-page">
+                          <img :src="item.imagepath" alt />
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </b-tab>
-              </b-tabs>
+                </div>
+              </div>
             </div>
+            <p align = "center"><br>{{subtitle1Desc}}</p>
           </div>
         </div>
       </div>
     </section>
-    <b-alert
-      :show="dismissCountDown"
-      variant="success"
-      @dismissed="dismissCountDown=0"
-      @dismiss-count-down="alert"
-    >
-      <p>Product Is successfully added to your wishlist.</p>
-    </b-alert>
-    <quickviewModel :openModal="showquickviewmodel" :productData="quickviewproduct" />
-    <compareModel :openCompare="showcomparemodal" :productData="comapreproduct" @closeCompare="closeCompareModal" />
-    <cartModel :openCart="showcartmodal" :productData="cartproduct" @closeCart="closeCartModal" :products="productslist" />
+    <div class="title1">
+      <h4>{{subtitle2}}</h4>
+    </div>
+    <section class="section-b-space p-t-0 ratio_asos">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p align = "center">{{subtitle2Desc}}</p>
+            <button align="right" type="submit" class="btn btn-solid btn-center" id="create-custom">Customize</button>
+          </div>
+        </div>
+      </div>
+    </section>
     <Footer />
 </div>
 </template>
 
-<script>
+<script type="text/javascript">
 import { mapState } from 'vuex'
 import Header from '../../../components/header/header1'
 import Footer from '../../../components/footer/footer1'
 import Breadcrumbs from '../../../components/widgets/breadcrumbs'
-import quickviewModel from '../../../components/widgets/quickview'
-import compareModel from '../../../components/widgets/compare-popup'
-import cartModel from '../../../components/cart-model/cart-modal-popup'
-import productBox1 from '../../../components/product-box/product-box1'
 export default {
   components: {
     Header,
     Footer,
-    Breadcrumbs,
-    productBox1,
-    quickviewModel,
-    compareModel,
-    cartModel
+    Breadcrumbs
   },
   data() {
     return {
       products: [],
       category: [],
-      title: 'select category',
-      subtitle: 'quick create',
-      showquickviewmodel: false,
-      showcomparemodal: false,
-      showcartmodal: false,
-      quickviewproduct: {},
-      comapreproduct: {},
-      cartproduct: {},
-      dismissSecs: 5,
-      dismissCountDown: 0,
-      description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.'
+      title: 'Create new Listing',
+      subtitle: 'Select an existing category to get started quickly!',
+      subtitle1Desc: 'Get your jobs posted or services listed in mere seconds.',
+      subtitle2: 'Other Options',
+      subtitle2Desc: 'Want to create a more customized listing? Get started by selecting the customize button below.',
+      swiperOption: {
+        slidesPerView: 6,
+        freeMode: true,
+        breakpoints: {
+          1199: {
+            slidesPerView: 4
+          },
+          768: {
+            slidesPerView: 3
+          },
+          420: {
+            slidesPerView: 2
+          }
+        }
+      },
+      items: [
+        {
+          imagepath: require('@/assets/images/logos/Cleaning.jpg')
+        },
+        {
+          imagepath: require('@/assets/images/logos/Handyman.png')
+        },
+        {
+          imagepath: require('@/assets/images/logos/Tutoring.jpg')
+        },
+        {
+          imagepath: require('@/assets/images/logos/lawncare.png')
+        },
+        {
+          imagepath: require('@/assets/images/logos/Cleaning.jpg')
+        },
+        {
+          imagepath: require('@/assets/images/logos/Handyman.png')
+        },
+        {
+          imagepath: require('@/assets/images/logos/Tutoring.jpg')
+        },
+        {
+          imagepath: require('@/assets/images/logos/lawncare.png')
+        }
+      ]
     }
   },
   computed: {
@@ -122,24 +140,6 @@ export default {
     },
     alert(item) {
       this.dismissCountDown = item
-    },
-    showQuickview(item, productData) {
-      this.showquickviewmodel = item
-      this.quickviewproduct = productData
-    },
-    showCoampre(item, productData) {
-      this.showcomparemodal = item
-      this.comapreproduct = productData
-    },
-    closeCompareModal(item) {
-      this.showcomparemodal = item
-    },
-    showCart(item, productData) {
-      this.showcartmodal = item
-      this.cartproduct = productData
-    },
-    closeCartModal(item) {
-      this.showcartmodal = item
     }
   }
 }
