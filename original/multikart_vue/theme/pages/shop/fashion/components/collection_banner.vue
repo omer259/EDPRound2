@@ -35,7 +35,7 @@ export default {
         },
         {
           imagepath: require('@/assets/images/real/post_a_job_resized.jpg'),
-          title: 'Post a Job',
+          title: 'Find a Service',
           subtitle: 'Premium service at an affordable price'
         }
       ]
