@@ -25,7 +25,7 @@
                   :key="index"
                 >
                   <div class="product-box">
-                    <productBox1
+                    <productBox3
                       @opencartmodel="showCartModal"
                       @showCompareModal="showcomparemodal"
                       @openquickview="showquickview"
@@ -51,14 +51,15 @@
       <p>Product Is successfully added to your wishlist.</p>
     </b-alert>
   </div>
+
 </template>
 
 <script>
-import productBox1 from '../../../../components/product-box/product-box1'
+import productBox3 from '../../../../components/product-box/product-box3'
 export default {
   props: ['products'],
   components: {
-    productBox1
+    productBox3
   },
   data() {
     return {
