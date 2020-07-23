@@ -21,6 +21,7 @@
           :class="{active: imageSrc == image.src}"
           v-for="(image,index) in product.images"
           :key="index"
+          @click="productVariantChange(image.src)"
         >
           <a href="javascript:void(0);">
             <img :src="getImgUrl(image.src)" alt="'image.alt'" />
@@ -40,9 +41,9 @@
         >
           <i class="ti-search" aria-hidden="true"></i>
         </a>
-        <a href="javascript:void(0)" title="Comapre" @click="addToCompare(product)" v-b-modal.modal-compare variant="primary">
+       <!--<a href="javascript:void(0)" title="Comapre" @click="addToCompare(product)" v-b-modal.modal-compare variant="primary">
           <i class="ti-reload" aria-hidden="true"></i>
-        </a>
+        </a>-->
       </div>
     </div>
     <div class="product-info">
@@ -157,6 +158,10 @@ export default {
           })
         }
       })
+    },
+    productVariantChange(imgsrc) {
+      console.log("I am calll");      
+      this.imageSrc = imgsrc
     },
     countDownChanged(dismissCountDown) {
       this.dismissCountDown = dismissCountDown
