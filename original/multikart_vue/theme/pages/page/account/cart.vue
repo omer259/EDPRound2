@@ -10,9 +10,9 @@
               <thead>
                 <tr class="table-head">
                   <th scope="col">image</th>
-                  <th scope="col">product name</th>
-                  <th scope="col">price</th>
-                  <th scope="col">quantity</th>
+                  <th scope="col">Job Title</th>
+                  <th scope="col">Rate</th>
+                  <th scope="col">Hours</th>
                   <th scope="col">action</th>
                   <th scope="col">total</th>
                 </tr>
@@ -21,7 +21,8 @@
                 <tr>
                   <td>
                     <nuxt-link :to="{ path: '/product/sidebar/'+item.id}">
-                      <img :src="getImgUrl(item.images[0].src)" alt />
+                     <img :src="getImgUrl(item.images[0].src)" alt />
+                      
                     </nuxt-link>
                   </td>
                   <td>
@@ -141,14 +142,14 @@
               </h3>
               <h4 class="mb-3">Add something to make me happy :)</h4>
               <div class="col-12">
-                <nuxt-link :to="{ path: '/'}" class="btn btn-solid">continue shopping</nuxt-link>
+                <nuxt-link :to="{ path: '/'}" class="btn btn-solid">continue searching</nuxt-link>
               </div>
             </div>
           </div>
         </div>
         <div class="row cart-buttons" v-if="cart.length">
           <div class="col-6">
-            <nuxt-link :to="{ path: '/'}" :class="'btn btn-solid'">continue shopping</nuxt-link>
+            <nuxt-link :to="{ path: '/'}" :class="'btn btn-solid'">continue searching</nuxt-link>
           </div>
           <div class="col-6">
             <nuxt-link :to="{ path: '/page/account/checkout'}" :class="'btn btn-solid'">check out</nuxt-link>
