@@ -60,7 +60,7 @@
                       </h4>
                       <h3 v-if="getDetail.sale">{{ discountedPrice(getDetail) * curr.curr | currency(curr.symbol) }}</h3>
                       <h3 v-else>{{ getDetail.price * curr.curr | currency(curr.symbol) }}</h3>
-                      <ul class="color-variant">
+                    <!--  <ul class="color-variant">
                         <li
                           v-bind:class="{ active: activeColor == variant}"
                           v-for="(variant,variantIndex) in Color(getDetail.variants)"
@@ -72,14 +72,14 @@
                             @click="sizeVariant(getDetail.variants[variantIndex].image_id, variantIndex, variant)"
                           ></a>
                         </li>
-                      </ul>
+                      </ul> -->
                       <div class="pro_inventory" v-if="getDetail.stock < 8">
                         <p class="active"> Hurry! We have only {{ getDetail.stock }} product in stock. </p>
                         <div class="inventory-scroll">
                           <span style="width: 95%;"></span>
                         </div>
                       </div>
-                      <div class="product-description border-product">
+                      <!--<div class="product-description border-product">
                         <h6 class="product-title size-text">
                           select size
                           <span>
@@ -141,7 +141,7 @@
                             </span>
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                       <div class="product-buttons">
                         <nuxt-link :to="{ path: '/page/account/cart'}">
                           <button
@@ -149,14 +149,14 @@
                             title="Add to cart"
                             @click="addToCart(getDetail, counter)"
                             :disabled="counter > getDetail.stock"
-                          >Add To Cart</button>
+                          >Add To Search list</button>
                         </nuxt-link>
                         <button
                             class="btn btn-solid"
                             title="buy now"
                             @click="buyNow(getDetail, counter)"
                             :disabled="counter > getDetail.stock"
-                          >Buy Now</button>
+                          >Apply Now</button>
                       </div>
                       <div class="border-product">
                         <h6 class="product-title">product details</h6>

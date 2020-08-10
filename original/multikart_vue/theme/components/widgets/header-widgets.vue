@@ -80,7 +80,7 @@
             </ul>
           </div>
         </li>
-        <li class="onhover-div mobile-cart">
+       <!-- <li class="onhover-div mobile-cart">
           <div>
             <img alt :src='"@/assets/images/icon/layout4/cart.png"' class="img-fluid">
             <i class="ti-shopping-cart"></i>
@@ -129,7 +129,7 @@
               </div>
             </li>
           </ul>
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>

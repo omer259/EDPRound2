@@ -11,7 +11,7 @@
               <div class="row">
                 <div class="col-lg-6 col-sm-12 col-xs-12">
                   <div class="checkout-title">
-                    <h3>Billing Details</h3>
+                    <h3>Applicant Details</h3>
                   </div>
                   <div class="row check-out">
                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
@@ -42,15 +42,13 @@
                         <span class="validate-error">{{ errors[0] }}</span>
                       </ValidationProvider>
                     </div>
-                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                    <!--<div class="form-group col-md-12 col-sm-12 col-xs-12">
                       <div class="field-label">Country</div>
                       <select>
-                        <option>India</option>
-                        <option selected>South Africa</option>
-                        <option>United State</option>
-                        <option>Australia</option>
+                        <option>United States</option>
+                        <option>Canada</option>
                       </select>
-                    </div>
+                    </div>-->
                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                       <div class="field-label">Address</div>
                       <ValidationProvider rules="required" v-slot="{ errors }" name="Address">
@@ -66,14 +64,14 @@
                       </ValidationProvider>
                     </div>
                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                      <div class="field-label">State / County</div>
+                      <div class="field-label">State / Province</div>
                       <ValidationProvider rules="required" v-slot="{ errors }" name="State">
                         <input type="text" v-model="user.state" name="State" />
                         <span class="validate-error">{{ errors[0] }}</span>
                       </ValidationProvider>
                     </div>
                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                      <div class="field-label">Postal Code</div>
+                      <div class="field-label">Zip/ Postal Code</div>
                       <ValidationProvider rules="required" v-slot="{ errors }" name="Postal Code">
                         <input type="text" v-model="user.pincode" name="Postal Code" />
                         <span class="validate-error">{{ errors[0] }}</span>
@@ -90,9 +88,10 @@
                   <div class="checkout-details">
                     <div class="order-box">
                       <div class="title-box">
+
                         <div>
-                          Product
-                          <span>Total</span>
+                          Job
+                          <span>Rate</span>
                         </div>
                       </div>
                       <ul class="qty"  v-if="cart.length">
@@ -141,7 +140,7 @@
                                   :value="false"
                                 />
                                 <label for="payment-1">
-                                  Stripe
+                                  Credit Card
                                   <span
                                     class="small-text"
                                   >Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span>

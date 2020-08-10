@@ -63,25 +63,37 @@
         <del>{{ product.price * curr.curr | currency(curr.symbol) }}</del>
       </h4>
       <h4 v-else>{{ product.price * curr.curr | currency(curr.symbol) }}</h4>
-      <ul class="color-variant" v-if="product.variants[0].color">
+     <!-- <ul class="color-variant" v-if="product.variants[0].color">
         <li v-for="(variant,variantIndex) in Color(product.variants)" :key="variantIndex">
           <a
             @click="productColorchange(variant, product, index)"
             :class="[variant]"
             v-bind:style="{ 'background-color' : variant}"
           ></a>
-        </li>
-      </ul>
+        </li> 
+      </ul>-->
       <div class="add-btn">
-        <button
+        <!--<button
           data-toggle="modal"
           data-target="#addtocart"
           title="Add to cart"
           class="btn btn-outline"
-          @click="addToCart(product)"
+          @click="addToCart(product)" 
+        > -->
+       <nuxt-link :to="{ path: '/page/account/cart'}" :class="'view-cart'">
+             
+        <button
+         
+          data-toggle="modal"
+          data-target="#addtocart"
+          title="Add to cart"
+          class="btn btn-outline"
+          @click="addToCart(product)" 
+         
         >
-          <i class="ti-shopping-cart"></i> add to cart
+          <i class="ti-shopping-cart"></i> Apply
         </button>
+       </nuxt-link>
       </div>
     </div>
   </div>
@@ -119,10 +131,17 @@ export default {
     getImgUrl(path) {
       return require('@/assets/images/' + path)
     },
-    addToCart: function (product) {
+    addToCart_old: function (product) {
       this.cartval = true
       this.$emit('opencartmodel', this.cartval)
       this.$store.dispatch('cart/addToCart', product)
+    },
+    addToCart: function (product) {
+      this.cartval = true
+      this.cartProduct = product
+      this.$emit('opencartmodel', this.cartval, this.cartProduct)
+      this.$store.dispatch('cart/addToCart', product)
+      
     },
     addToWishlist: function (product) {
       this.dismissCountDown = this.dismissSecs
